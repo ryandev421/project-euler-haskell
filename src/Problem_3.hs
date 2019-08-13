@@ -10,4 +10,4 @@ factorsOf xs = concat [[x,xs`div`x] | x <- [1..isqrt(xs)], xs `mod` x == 0]
 isPrime xs = length (factorsOf xs) == 2
 
 input = 600851475143
-solve = last (filter isPrime (factorsOf input))
+solve = maximum (filter isPrime (factorsOf input))
