@@ -1,5 +1,5 @@
 module Lib
-    ( isPrime, factorsOf
+    ( isPrime, factorsOf, factorial, binomial
     ) where
 
 isqrt :: (Integral a) => a -> a
@@ -14,3 +14,7 @@ factorsOf n =
 
 isPrime :: (Integral a) => a -> Bool
 isPrime n = length (factorsOf n) == 2
+
+factorial n = product [1..n]
+
+binomial n k = div (product [(n - k + 1) .. n]) (factorial k)
